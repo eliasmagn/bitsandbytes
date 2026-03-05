@@ -49,9 +49,8 @@ def get_cuda_version_string() -> Optional[str]:
     if version_tuple is None:
         return None
     major, minor = version_tuple
-    return f"{major * 10 + minor}"
-
-
+    return f"{major}{minor}"  
+    
 def get_cuda_specs() -> Optional[CUDASpecs]:
     """Get CUDA/HIP specifications."""
     if not torch.cuda.is_available():
